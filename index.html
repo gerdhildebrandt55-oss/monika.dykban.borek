@@ -1,1 +1,207 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil – Monika Dykban</title>
+  <meta name="description" content="Profil osobisty Moniki – poznaj mnie, moje zainteresowania i skontaktuj się bezpiecznie." />
+  <style>
+    :root{
+      --bg:#0f172a; --panel:#111827; --text:#e5e7eb; --muted:#cbd5e1;
+      --brand:#22d3ee; --brand2:#a78bfa; --ring:rgba(34,211,238,.35); --radius:18px;
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{
+      margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -20%, rgba(167,139,250,.15), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, rgba(34,211,238,.12), transparent 60%), var(--bg);
+      color:var(--text);
+    }
+    .wrap{max-width:1080px; margin:0 auto; padding:28px}
+    header{display:flex; align-items:center; justify-content:space-between; margin-bottom:18px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:48px; height:48px; border-radius:14px; background:linear-gradient(135deg,var(--brand),var(--brand2))}
+    h1{margin:0; font-size:1.25rem}
+    .card{background:linear-gradient(180deg, rgba(17,24,39,.7), rgba(17,24,39,.95));
+      border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:20px}
+    .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:18px}
+    .face{border-radius:14px; aspect-ratio:4/3; background:rgba(255,255,255,.05);
+      border:1px dashed rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0}
+    .badge{padding:6px 10px; border-radius:999px; font-size:.85rem; background:rgba(34,211,238,.12);
+      border:1px solid rgba(34,211,238,.35)}
+    .section{margin-top:18px; padding-top:16px; border-top:1px solid rgba(255,255,255,.08)}
+    h2{margin:0 0 10px; font-size:1.1rem}
+    p,li{color:var(--muted)}
+    .grid{display:grid; gap:12px; grid-template-columns:repeat(3,1fr)}
+    .tile{background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:12px}
+    .contact{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    input,select,textarea,button{
+      width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14);
+      background:#0b1220; color:var(--text); outline:none
+    }
+    input:focus,select:focus,textarea:focus{box-shadow:0 0 0 6px var(--ring); border-color:var(--brand)}
+    textarea{min-height:120px; resize:vertical}
+    .row-full{grid-column:1/-1}
+    .actions{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{cursor:pointer; font-weight:600; letter-spacing:.2px; border:none}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand2))}
+    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,.18)}
+    .link{color:#bae6fd; text-decoration:none}
+    footer{color:#9ca3af; font-size:.9rem; text-align:center; padding:24px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Profil – Monika Dykban</h1>
+      </div>
+    </header>
+
+    <main class="card">
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <h2>Cześć, jestem <span style="color:#fff;font-weight:700">Monika</span> 👋</h2>
+          <p>
+            Witaj na mojej stronie profilowej. Szukam szczerej relacji opartej na zaufaniu, szacunku i czułości.
+            Jestem otwarta na poznanie <strong>kobiet i mężczyzn</strong> – ważne są dla mnie wartości, poczucie humoru i chemia.
+          </p>
+          <div class="badges" aria-label="Cechy">
+            <span class="badge">życzliwa</span>
+            <span class="badge">z poczuciem humoru</span>
+            <span class="badge">autentyczna</span>
+          </div>
+          <div class="section" aria-label="O mnie">
+            <h2>O mnie</h2>
+            <p>
+              Jestem osobą ciepłą i komunikatywną. Żyję aktywnie na miarę możliwości – lubię spacery, dobrą kawę i spokojne rozmowy.
+              Mam stwardnienie rozsiane (SM) i dbam o siebie, regularnie ćwiczę lekko i utrzymuję pozytywne nastawienie.
+              Bliskość jest dla mnie ważna – jestem czuła i zmysłowa, a relacje traktuję poważnie i z szacunkiem.
+            </p>
+          </div>
+        </div>
+        <div class="face">Miejsce na zdjęcie</div>
+      </section>
+
+      <!-- ZAINTERESOWANIA -->
+      <section class="section" aria-label="Zainteresowania">
+        <h2>Zainteresowania</h2>
+        <div class="grid">
+          <div class="tile">
+            <strong>Ruch & natura</strong>
+            <ul>
+              <li>Spacery, lekka joga</li>
+              <li>Wycieczki nad wodę i do lasu</li>
+            </ul>
+          </div>
+          <div class="tile">
+            <strong>Kreatywnie</strong>
+            <ul>
+              <li>Gotowanie i nowe przepisy</li>
+              <li>Zdjęcia & małe DIY</li>
+            </ul>
+          </div>
+          <div class="tile">
+            <strong>Chwila spokoju</strong>
+            <ul>
+              <li>Książki i dobre seriale</li>
+              <li>Muzyka, spotkania z przyjaciółmi</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CZEGO SZUKAM -->
+      <section class="section" aria-label="Czego szukam">
+        <h2>Czego szukam</h2>
+        <p>
+          Szukam osoby empatycznej, odpowiedzialnej i ciepłej. Może to być kobieta lub mężczyzna – najważniejsza jest
+          dojrzałość emocjonalna, wzajemne wsparcie i gotowość do budowania więzi. Jestem otwarta na różne scenariusze:
+          przyjaźń, relacja na odległość, a jeśli poczujemy, że to „to” – coś poważniejszego.
+        </p>
+        <ul>
+          <li>Doceniam szczerość, poczucie humoru i kulturę osobistą.</li>
+          <li>Chcę, aby obie strony czuły się bezpiecznie i komfortowo.</li>
+          <li>Szanuję granice i komunikuję potrzeby wprost.</li>
+        </ul>
+      </section>
+
+      <!-- KONTAKT -->
+      <section id="kontakt" class="section" aria-label="Kontakt">
+        <h2>Kontakt</h2>
+        <p>
+          Możesz skontaktować się ze mną przez formularz lub przez profil społecznościowy.
+          (Uwaga: pamiętaj o swojej prywatności; publiczne dane udostępniaj świadomie.)
+        </p>
+        <div class="actions" style="margin-bottom:10px">
+          <!-- Link dodany na życzenie użytkowniczki; jeśli chcesz, możesz go usunąć -->
+          <a class="btn btn-ghost link" href="https://www.facebook.com/monika.dykban" target="_blank" rel="noopener">Mój profil na Facebooku</a>
+        </div>
+        <form class="contact" onsubmit="event.preventDefault(); submitMsg()">
+          <div>
+            <label for="imie">Twoje imię</label>
+            <input id="imie" name="imie" placeholder="np. Anna / Piotr" required>
+          </div>
+          <div>
+            <label for="email">Twój e-mail</label>
+            <input id="email" name="email" type="email" placeholder="twoj@mail.example" required>
+          </div>
+          <div>
+            <label for="preferencje">Kogo chcesz poznać?</label>
+            <select id="preferencje" name="preferencje">
+              <option value="kobiety">Kobiety</option>
+              <option value="mezczyzn">Mężczyzn</option>
+              <option value="wszystkich" selected>Wszystkich</option>
+            </select>
+          </div>
+          <div class="row-full">
+            <label for="wiadomosc">Wiadomość</label>
+            <textarea id="wiadomosc" name="wiadomosc" placeholder="Napisz kilka słów o sobie..." required></textarea>
+          </div>
+          <div class="row-full">
+            <label style="display:flex; gap:8px; align-items:center">
+              <input type="checkbox" id="zgoda" required>
+              <span>Wyrażam zgodę na kontakt i przetwarzanie moich danych wyłącznie w celu odpowiedzi na tę wiadomość.</span>
+            </label>
+          </div>
+          <div class="row-full actions">
+            <button class="btn btn-primary" type="submit">Wyślij</button>
+            <button class="btn btn-ghost" type="reset">Wyczyść</button>
+          </div>
+        </form>
+        <p style="margin-top:10px; font-size:.9rem; color:#94a3b8">
+          Wersja demo – formularz nie wysyła danych na serwer. Możesz później podłączyć e-mail lub system wiadomości.
+        </p>
+      </section>
+
+      <!-- PRYWATNOŚĆ -->
+      <section class="section" aria-label="Prywatność">
+        <h2>Prywatność & bezpieczeństwo</h2>
+        <ul>
+          <li>Udostępniam tu tylko to, co chcę pokazać publicznie. Szanujmy swoje granice.</li>
+          <li>Zdjęcia i dane – tylko świadomie i odpowiedzialnie.</li>
+          <li>Jeśli chcesz usunięcia wiadomości – napisz, a zareaguję niezwłocznie.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="rok"></span> Profil Moniki • Dbaj o zgodę i prywatność.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('rok').textContent = new Date().getFullYear();
+    function submitMsg(){
+      if(!document.getElementById('zgoda').checked){ alert('Zaznacz zgodę, aby wysłać wiadomość.'); return; }
+      alert('Dziękuję! Twoja wiadomość została zapisana lokalnie (demo).');
+    }
+  </script>
+</body>
+</html>
 
