@@ -27,7 +27,8 @@
       border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:20px}
     .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:18px}
     .face{border-radius:14px; aspect-ratio:4/3; background:rgba(255,255,255,.05);
-      border:1px dashed rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600}
+      border:1px dashed rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; overflow:hidden}
+    .face img{width:100%; height:100%; object-fit:cover; border-radius:14px}
     .badges{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0}
     .badge{padding:6px 10px; border-radius:999px; font-size:.85rem; background:rgba(34,211,238,.12);
       border:1px solid rgba(34,211,238,.35)}
@@ -50,6 +51,10 @@
     .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,.18)}
     .link{color:#bae6fd; text-decoration:none}
     footer{color:#9ca3af; font-size:.9rem; text-align:center; padding:24px}
+    .comments{margin-top:20px}
+    .comment{background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
+      border-radius:14px; padding:12px; margin-bottom:10px}
+    .comment .meta{font-size:.8rem; color:#9ca3af; margin-bottom:6px}
     @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}}
   </style>
 </head>
@@ -86,7 +91,9 @@
             </p>
           </div>
         </div>
-        <div class="face">Miejsce na zdjęcie</div>
+        <div class="face">
+          <img src="assets/fallschirm.png" alt="Zdjęcie Moniki">
+        </div>
       </section>
 
       <!-- ZAINTERESOWANIA -->
@@ -175,19 +182,45 @@
           </div>
         </form>
       </section>
+
+      <!-- KOMENTARZE -->
+      <section class="section comments" aria-label="Komentarze">
+        <h2>Komentarze</h2>
+        <div class="comment">
+          <div class="meta">📅 Wczoraj</div>
+          <p>Bardzo mi przykro z powodu Twojej choroby, Moniko. Życzę dużo siły i wsparcia. Jeśli chcesz, możemy kiedyś umówić się na kawę w Gorzowie. – <strong>Kasia</strong></p>
+        </div>
+        <div class="comment">
+          <div class="meta">📅 Dzisiaj</div>
+          <p>Moniko, przesyłam serdeczne pozdrowienia i wyrazy współczucia. Cieszę się, że masz pozytywne nastawienie – to inspirujące. Może spotkamy się na spacerze lub kawie. – <strong>Piotr</strong></p>
+        </div>
+      </section>
     </main>
 
     <footer>
-      © <span id="rok"></span> Profil Moniki • Dbaj o zgodę i prywatność.
+      © <span id="rok"></span> Profil Moniki • Dbaj o zgodę i prywatność.<br>
+      👁️ Liczba odwiedzin: <span id="counter"></span>
     </footer>
   </div>
 
   <script>
     document.getElementById('rok').textContent = new Date().getFullYear();
+
+    // Formularz
     function submitMsg(){
-      if(!document.getElementById('zgoda').checked){ alert('Zaznacz zgodę, aby wysłać wiadomość.'); return; }
+      if(!document.getElementById('zgoda').checked){
+        alert('Zaznacz zgodę, aby wysłać wiadomość.');
+        return;
+      }
       alert('Dziękuję! Twoja wiadomość została zapisana lokalnie (demo).');
     }
+
+    // Visitor Counter (localStorage)
+    let visits = localStorage.getItem('visitCount');
+    if(!visits){ visits = 0; }
+    visits++;
+    localStorage.setItem('visitCount', visits);
+    document.getElementById('counter').textContent = visits;
   </script>
 </body>
 </html>
