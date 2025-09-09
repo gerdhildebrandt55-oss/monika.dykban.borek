@@ -26,7 +26,8 @@
     .card{background:linear-gradient(180deg, rgba(17,24,39,.7), rgba(17,24,39,.95));
       border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:20px}
     .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:18px}
-    .face{border-radius:14px; aspect-ratio:4/3; background:rgba(255,255,255,.05);
+    .faces{display:flex; gap:10px}
+    .face{flex:1; border-radius:14px; aspect-ratio:4/3; background:rgba(255,255,255,.05);
       border:1px dashed rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; overflow:hidden}
     .face img{width:100%; height:100%; object-fit:cover; border-radius:14px}
     .badges{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0}
@@ -55,7 +56,7 @@
     .comment{background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
       border-radius:14px; padding:12px; margin-bottom:10px}
     .comment .meta{font-size:.8rem; color:#9ca3af; margin-bottom:6px}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.faces{flex-direction:column}}
   </style>
 </head>
 <body>
@@ -91,8 +92,13 @@
             </p>
           </div>
         </div>
-        <div class="face">
-          <img src="assets/fallschirm.png" alt="Zdjęcie Moniki">
+        <div class="faces">
+          <div class="face">
+            <img src="assets/fallschirm.png" alt="Zdjęcie Moniki 1">
+          </div>
+          <div class="face">
+            <img src="assets/wuste.jpg" alt="Zdjęcie Moniki 2">
+          </div>
         </div>
       </section>
 
@@ -211,6 +217,21 @@
           <div class="meta">📅 Dzisiaj</div>
           <p>Moniko, Twoja historia mnie poruszyła. Chciałbym Cię poznać osobiście i spędzić trochę czasu razem – może kino albo kolacja? – <strong>Łukasz</strong></p>
         </div>
+
+        <div class="comment">
+          <div class="meta">📅 Dzisiaj</div>
+          <p>Cześć Monika, bardzo podziwiam Twoją odwagę. Jeśli będziesz chciała, mogę pomóc Ci w codziennych sprawach i chętnie zabiorę Cię na kawę. – <strong>Kamil</strong></p>
+        </div>
+
+        <div class="comment">
+          <div class="meta">📅 Dzisiaj</div>
+          <p>Moniko, pamiętam Cię jeszcze sprzed lat. Pozdrów ode mnie serdecznie swoich rodziców – mam nadzieję, że wkrótce znów się zobaczymy. – <strong>Paweł</strong></p>
+        </div>
+
+        <div class="comment">
+          <div class="meta">📅 Dzisiaj</div>
+          <p>Droga Moniko, imponuje mi Twoje podejście do życia. Chętnie poznam Cię bliżej i pomogę, jeśli tylko będziesz tego potrzebować. Może wspólna kawa? – <strong>Jan</strong></p>
+        </div>
       </section>
     </main>
 
@@ -238,10 +259,9 @@
       const KEY = 'visitCount';
       let v = parseInt(localStorage.getItem(KEY), 10);
 
-      // jeśli brak/nie liczba -> ustaw tak, by pierwszy odczyt po inkremencie dał 1000
-      if (Number.isNaN(v)) v = 999;
-
+      if (Number.isNaN(v)) v = 999; // next increment -> 1000
       v += 1;
+
       localStorage.setItem(KEY, String(v));
       document.getElementById('counter').textContent = v.toLocaleString('pl-PL');
     })();
