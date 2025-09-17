@@ -26,35 +26,31 @@
     .card{background:linear-gradient(180deg, rgba(17,24,39,.7), rgba(17,24,39,.95));
       border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:20px}
     .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:18px}
+    /* Bilder: vollständige Anzeige + Lightbox */
     .faces{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
     .face{
-      flex:1 1 240px;
-      max-width:300px;
-      border-radius:14px;
-      background:#0b1220;
+      flex:1 1 240px; max-width:300px;
+      border-radius:14px; background:#0b1220;
       border:1px solid rgba(255,255,255,.15);
       display:flex; align-items:center; justify-content:center;
-      overflow:hidden;
-      cursor:pointer;
+      overflow:hidden; cursor:pointer;
     }
     .face img{
-      width:100%; height:100%;
-      object-fit:contain;
-      border-radius:14px;
-      transition:transform .3s;
+      width:100%; height:100%; object-fit:contain;  /* zeigt das ganze Bild */
+      border-radius:14px; transition:transform .3s;
     }
-    .face:hover img{transform:scale(1.05)}
+    .face:hover img{transform:scale(1.03)}
     .lightbox{
-      position:fixed; inset:0;
-      background:rgba(0,0,0,.85);
-      display:none; align-items:center; justify-content:center;
-      z-index:9999;
+      position:fixed; inset:0; display:none;
+      align-items:center; justify-content:center;
+      background:rgba(0,0,0,.85); z-index:9999;
     }
-    .lightbox img{
-      max-width:95%; max-height:95%;
-      border-radius:12px;
-      box-shadow:0 0 20px rgba(0,0,0,.6);
+    .lightbox img{max-width:95%; max-height:95%; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,.6)}
+    .lightbox .close{
+      position:absolute; top:14px; right:16px;
+      font-size:28px; color:#e5e7eb; cursor:pointer; user-select:none;
     }
+
     .badges{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0}
     .badge{padding:6px 10px; border-radius:999px; font-size:.85rem; background:rgba(34,211,238,.12);
       border:1px solid rgba(34,211,238,.35)}
@@ -124,7 +120,7 @@
             </p>
           </div>
         </div>
-        <div class="faces">
+        <div class="faces" aria-label="Galeria zdjęć (kliknij, aby powiększyć)">
           <div class="face"><img src="assets/fallschirm.png" alt="Zdjęcie Moniki A"></div>
           <div class="face"><img src="assets/wuste.jpg" alt="Zdjęcie Moniki B"></div>
           <div class="face"><img src="assets/1.jpg" alt="Zdjęcie Moniki 1"></div>
@@ -226,6 +222,7 @@
       <!-- KOMENTARZE -->
       <section class="section comments" aria-label="Komentarze">
         <h2>Komentarze</h2>
+        <!-- 20 komentarzy z różnymi datami i godzinami -->
         <div class="comment"><div class="meta">📅 Dzisiaj, 14:32</div><p>Moniko, cieszę się, że dzielisz się swoją historią. – <strong>Anna</strong></p></div>
         <div class="comment"><div class="meta">📅 Dzisiaj, 09:15</div><p>Bardzo inspirujące podejście. – <strong>Piotr</strong></p></div>
         <div class="comment"><div class="meta">📅 Wczoraj, 21:48</div><p>Podziwiam Twoją szczerość. – <strong>Kasia</strong></p></div>
@@ -242,4 +239,77 @@
         <div class="comment"><div class="meta">📅 5 czerwca 2025, 19:21</div><p>Życzę dużo zdrowia. – <strong>Kamil</strong></p></div>
         <div class="comment"><div class="meta">📅 29 maja 2025, 14:16</div><p>Chciałbym się spotkać. – <strong>Mateusz</strong></p></div>
         <div class="comment"><div class="meta">📅 14 maja 2025, 18:44</div><p>Podziwiam Twoją odwagę. – <strong>Sylwia</strong></p></div>
-        <div class="comment"><
+        <div class="comment"><div class="meta">📅 7 maja 2025, 20:08</div><p>Jesteś wyjątkowa. – <strong>Robert</strong></p></div>
+        <div class="comment"><div class="meta">📅 20 kwietnia 2025, 12:33</div><p>Miło, że jesteś z okolic. – <strong>Agnieszka</strong></p></div>
+        <div class="comment"><div class="meta">📅 8 kwietnia 2025, 09:42</div><p>Twoja szczerość mnie zachwyca. – <strong>Marcin</strong></p></div>
+        <div class="comment"><div class="meta">📅 25 marca 2025, 22:11</div><p>Jesteś inspiracją! – <strong>Joanna</strong></p></div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="rok"></span> Profil Moniki • Dbaj o zgodę i prywatność.<br>
+      👁️ Liczba odwiedzin: <span id="counter"></span>
+      <div id="impressum" class="impressum" aria-label="Impressum">
+        <strong>Impressum:</strong><br>
+        Monika Dykban<br>
+        Borek 8<br>
+        PL-66-446 Deczno/Borek<br>
+        Tel.: <a class="link" href="tel:+48783020727">+48 783 020 727</a><br>
+        E-mail: <a class="link" href="mailto:monika.dy@interia.com">monika.dy@interia.com</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd zdjęcia">
+    <span class="close" id="lbClose" aria-label="Zamknij">✕</span>
+    <img id="lbImg" src="" alt="">
+  </div>
+
+  <script>
+    // Rok w stopce
+    document.getElementById('rok').textContent = new Date().getFullYear();
+
+    // Formularz (demo)
+    function submitMsg(){
+      if(!document.getElementById('zgoda').checked){
+        alert('Zaznacz zgodę, aby wysłać wiadomość.');
+        return;
+      }
+      alert('Dziękuję! Twoja wiadomość została zapisana lokalnie (demo).');
+    }
+
+    // Visitor Counter: start at 1000 and persist (per browser)
+    (function(){
+      const KEY = 'visitCount';
+      let v = parseInt(localStorage.getItem(KEY), 10);
+      if (Number.isNaN(v)) v = 999; // next increment -> 1000
+      v += 1;
+      localStorage.setItem(KEY, String(v));
+      document.getElementById('counter').textContent = v.toLocaleString('pl-PL');
+    })();
+
+    // Lightbox logic
+    (function(){
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbClose = document.getElementById('lbClose');
+
+      document.querySelectorAll('.face img').forEach(img=>{
+        img.addEventListener('click', ()=>{
+          lbImg.src = img.src;
+          lbImg.alt = img.alt || '';
+          lb.style.display = 'flex';
+        });
+      });
+
+      function closeLB(){
+        lb.style.display = 'none';
+        lbImg.src = '';
+      }
+      lb.addEventListener('click', (e)=>{ if(e.target===lb || e.target===lbClose) closeLB(); });
+      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLB(); });
+    })();
+  </script>
+</body>
+</html>
