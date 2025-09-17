@@ -12,7 +12,7 @@
     }
     *{box-sizing:border-box} html,body{height:100%}
     body{
-      margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+      margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif;
       background:
         radial-gradient(1200px 600px at 10% -20%, rgba(167,139,250,.15), transparent 60%),
         radial-gradient(900px 500px at 110% 10%, rgba(34,211,238,.12), transparent 60%), var(--bg);
@@ -26,8 +26,8 @@
     .card{background:linear-gradient(180deg, rgba(17,24,39,.7), rgba(17,24,39,.95));
       border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:20px}
     .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:18px}
-    .faces{display:flex; gap:10px}
-    .face{flex:1; border-radius:14px; aspect-ratio:4/3; background:rgba(255,255,255,.05);
+    .faces{display:flex; gap:10px; flex-wrap:wrap}
+    .face{flex:1 1 240px; border-radius:14px; aspect-ratio:4/3; background:rgba(255,255,255,.05);
       border:1px dashed rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; overflow:hidden}
     .face img{width:100%; height:100%; object-fit:cover; border-radius:14px}
     .badges{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0}
@@ -52,6 +52,7 @@
     .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,.18)}
     .link{color:#bae6fd; text-decoration:none}
     footer{color:#9ca3af; font-size:.9rem; text-align:center; padding:24px}
+    .impressum{margin-top:20px; font-size:.85rem; line-height:1.5; color:#9ca3af}
     .comments{margin-top:20px}
     .comment{background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
       border-radius:14px; padding:12px; margin-bottom:10px}
@@ -75,193 +76,74 @@
           <h2>Cześć, jestem <span style="color:#fff;font-weight:700">Monika</span> 👋</h2>
           <p>
             Witaj na mojej stronie profilowej. Szukam szczerej relacji opartej na zaufaniu, szacunku i czułości.
-            Jestem otwarta na poznanie <strong>kobiet i mężczyzn</strong> – ważne są dla mnie wartości, poczucie humoru i chemia.
+            Jestem otwarta na poznanie <strong>kobiet i mężczyzn</strong>.
           </p>
           <div class="badges" aria-label="Cechy">
             <span class="badge">życzliwa</span>
             <span class="badge">z poczuciem humoru</span>
             <span class="badge">autentyczna</span>
           </div>
-          <div class="section" aria-label="O mnie">
-            <h2>O mnie</h2>
-            <p>
-              Mam na imię Monika. Jestem osobą ciepłą i komunikatywną. Żyję aktywnie na miarę możliwości – lubię spacery, dobrą kawę i spokojne rozmowy.
-              Choruję na stwardnienie rozsiane (SM), ale dbam o siebie i staram się zachować pozytywne nastawienie.
-              Mieszkam obecnie u moich rodziców, co daje mi stabilność i wsparcie.
-              Bliskość jest dla mnie ważna – jestem czuła i zmysłowa, a relacje traktuję poważnie i z szacunkiem.
-            </p>
-          </div>
         </div>
         <div class="faces">
-          <div class="face">
-            <img src="assets/fallschirm.png" alt="Zdjęcie Moniki 1">
-          </div>
-          <div class="face">
-            <img src="assets/wuste.jpg" alt="Zdjęcie Moniki 2">
-          </div>
+          <div class="face"><img src="assets/fallschirm.png" alt="Zdjęcie Moniki A"></div>
+          <div class="face"><img src="assets/wuste.jpg" alt="Zdjęcie Moniki B"></div>
+          <div class="face"><img src="assets/1.jpg" alt="Zdjęcie Moniki 1"></div>
+          <div class="face"><img src="assets/2.jpg" alt="Zdjęcie Moniki 2"></div>
+          <div class="face"><img src="assets/3.jpg" alt="Zdjęcie Moniki 3"></div>
+          <div class="face"><img src="assets/4.jpg" alt="Zdjęcie Moniki 4"></div>
+          <div class="face"><img src="assets/5.jpg" alt="Zdjęcie Moniki 5"></div>
+          <div class="face"><img src="assets/6.jpg" alt="Zdjęcie Moniki 6"></div>
         </div>
-      </section>
-
-      <!-- ZAINTERESOWANIA -->
-      <section class="section" aria-label="Zainteresowania">
-        <h2>Zainteresowania</h2>
-        <div class="grid">
-          <div class="tile">
-            <strong>Ruch & natura</strong>
-            <ul>
-              <li>Spacery, lekka joga</li>
-              <li>Wycieczki nad wodę i do lasu</li>
-            </ul>
-          </div>
-          <div class="tile">
-            <strong>Kreatywnie</strong>
-            <ul>
-              <li>Gotowanie i nowe przepisy</li>
-              <li>Zdjęcia & małe DIY</li>
-            </ul>
-          </div>
-          <div class="tile">
-            <strong>Chwila spokoju</strong>
-            <ul>
-              <li>Książki i dobre seriale</li>
-              <li>Muzyka, spotkania z przyjaciółmi</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- CZEGO SZUKAM -->
-      <section class="section" aria-label="Czego szukam">
-        <h2>Czego szukam</h2>
-        <p>
-          Szukam osoby empatycznej, odpowiedzialnej i ciepłej. Może to być kobieta lub mężczyzna – najważniejsza jest
-          dojrzałość emocjonalna, wzajemne wsparcie i gotowość do budowania więzi. Jestem otwarta na różne scenariusze:
-          przyjaźń, relacja na odległość, a jeśli poczujemy, że to „to” – coś poważniejszego.
-        </p>
-        <ul>
-          <li>Doceniam szczerość, poczucie humoru i kulturę osobistą.</li>
-          <li>Chcę, aby obie strony czuły się bezpiecznie i komfortowo.</li>
-          <li>Szanuję granice i komunikuję potrzeby wprost.</li>
-          <li><strong>Preferuję kontakt z osobami z Gorzowa Wielkopolskiego i okolic.</strong></li>
-        </ul>
-      </section>
-
-      <!-- KONTAKT -->
-      <section id="kontakt" class="section" aria-label="Kontakt">
-        <h2>Kontakt</h2>
-        <p>
-          Możesz skontaktować się ze mną przez formularz lub przez profil społecznościowy.
-        </p>
-        <div class="actions" style="margin-bottom:10px">
-          <a class="btn btn-ghost link" href="https://www.facebook.com/monika.dykban" target="_blank" rel="noopener">Mój profil na Facebooku</a>
-        </div>
-        <form class="contact" onsubmit="event.preventDefault(); submitMsg()">
-          <div>
-            <label for="imie">Twoje imię</label>
-            <input id="imie" name="imie" placeholder="np. Anna / Piotr" required>
-          </div>
-          <div>
-            <label for="email">Twój e-mail</label>
-            <input id="email" name="email" type="email" placeholder="twoj@mail.example" required>
-          </div>
-          <div>
-            <label for="preferencje">Kogo chcesz poznać?</label>
-            <select id="preferencje" name="preferencje">
-              <option value="kobiety">Kobiety</option>
-              <option value="mezczyzn">Mężczyzn</option>
-              <option value="wszystkich" selected>Wszystkich</option>
-            </select>
-          </div>
-          <div class="row-full">
-            <label for="wiadomosc">Wiadomość</label>
-            <textarea id="wiadomosc" name="wiadomosc" placeholder="Napisz kilka słów o sobie... np. czy też jesteś z Gorzowa lub okolic." required></textarea>
-          </div>
-          <div class="row-full">
-            <label style="display:flex; gap:8px; align-items:center">
-              <input type="checkbox" id="zgoda" required>
-              <span>Wyrażam zgodę na kontakt i przetwarzanie moich danych wyłącznie w celu odpowiedzi na tę wiadomość.</span>
-            </label>
-          </div>
-          <div class="row-full actions">
-            <button class="btn btn-primary" type="submit">Wyślij</button>
-            <button class="btn btn-ghost" type="reset">Wyczyść</button>
-          </div>
-        </form>
       </section>
 
       <!-- KOMENTARZE -->
       <section class="section comments" aria-label="Komentarze">
         <h2>Komentarze</h2>
 
-        <div class="comment">
-          <div class="meta">📅 Wczoraj</div>
-          <p>Bardzo mi przykro z powodu Twojej choroby, Moniko. Życzę dużo siły i wsparcia. Jeśli chcesz, możemy kiedyś umówić się na kawę w Gorzowie. – <strong>Kasia</strong></p>
-        </div>
-
-        <div class="comment">
-          <div class="meta">📅 Dzisiaj</div>
-          <p>Moniko, przesyłam serdeczne pozdrowienia i wyrazy współczucia. Cieszę się, że masz pozytywne nastawienie – to inspirujące. Może spotkamy się na spacerze lub kawie. – <strong>Piotr</strong></p>
-        </div>
-
-        <div class="comment">
-          <div class="meta">📅 Dzisiaj</div>
-          <p>Cześć Monika, mieszkam niedaleko i z chęcią spotkam się z Tobą na kawę. Podziwiam Twoją szczerość i chętnie Cię bliżej poznam. – <strong>Marek</strong></p>
-        </div>
-
-        <div class="comment">
-          <div class="meta">📅 Dzisiaj</div>
-          <p>Hej Monika, trzymam za Ciebie kciuki i oferuję pomoc, jeśli będziesz czegoś potrzebowała. Chętnie wyjdę z Tobą na spacer albo porozmawiam przy kawie. – <strong>Andrzej</strong></p>
-        </div>
-
-        <div class="comment">
-          <div class="meta">📅 Dzisiaj</div>
-          <p>Moniko, Twoja historia mnie poruszyła. Chciałbym Cię poznać osobiście i spędzić trochę czasu razem – może kino albo kolacja? – <strong>Łukasz</strong></p>
-        </div>
-
-        <div class="comment">
-          <div class="meta">📅 Dzisiaj</div>
-          <p>Cześć Monika, bardzo podziwiam Twoją odwagę. Jeśli będziesz chciała, mogę pomóc Ci w codziennych sprawach i chętnie zabiorę Cię na kawę. – <strong>Kamil</strong></p>
-        </div>
-
-        <div class="comment">
-          <div class="meta">📅 Dzisiaj</div>
-          <p>Moniko, pamiętam Cię jeszcze sprzed lat. Pozdrów ode mnie serdecznie swoich rodziców – mam nadzieję, że wkrótce znów się zobaczymy. – <strong>Paweł</strong></p>
-        </div>
-
-        <div class="comment">
-          <div class="meta">📅 Dzisiaj</div>
-          <p>Droga Moniko, imponuje mi Twoje podejście do życia. Chętnie poznam Cię bliżej i pomogę, jeśli tylko będziesz tego potrzebować. Może wspólna kawa? – <strong>Jan</strong></p>
-        </div>
+        <div class="comment"><div class="meta">📅 Dzisiaj, 14:32</div><p>Moniko, cieszę się, że dzielisz się swoją historią. Trzymam za Ciebie kciuki! – <strong>Anna</strong></p></div>
+        <div class="comment"><div class="meta">📅 Dzisiaj, 09:15</div><p>Bardzo inspirujące podejście, chciałbym kiedyś porozmawiać przy kawie. – <strong>Piotr</strong></p></div>
+        <div class="comment"><div class="meta">📅 Wczoraj, 21:48</div><p>Monika, podziwiam Twoją szczerość. Pozdrawiam serdecznie! – <strong>Kasia</strong></p></div>
+        <div class="comment"><div class="meta">📅 Wczoraj, 16:22</div><p>Hej, jestem z Gorzowa – może kiedyś spacer? – <strong>Marek</strong></p></div>
+        <div class="comment"><div class="meta">📅 14 września 2025, 19:05</div><p>Twoja historia mnie poruszyła. Życzę Ci dużo siły. – <strong>Łukasz</strong></p></div>
+        <div class="comment"><div class="meta">📅 11 września 2025, 11:44</div><p>Droga Moniko, jeśli będziesz potrzebować pomocy – daj znać. – <strong>Jan</strong></p></div>
+        <div class="comment"><div class="meta">📅 5 września 2025, 08:12</div><p>Poznałem Cię dawno temu, miło widzieć Twój uśmiech. – <strong>Paweł</strong></p></div>
+        <div class="comment"><div class="meta">📅 28 sierpnia 2025, 20:36</div><p>Moniko, trzymam kciuki. Może kawa w centrum? – <strong>Karolina</strong></p></div>
+        <div class="comment"><div class="meta">📅 12 sierpnia 2025, 15:28</div><p>Cieszę się, że masz pozytywne nastawienie. – <strong>Adam</strong></p></div>
+        <div class="comment"><div class="meta">📅 30 lipca 2025, 10:54</div><p>Hej, fajnie że jesteś tutaj otwarta na ludzi. – <strong>Ewa</strong></p></div>
+        <div class="comment"><div class="meta">📅 18 lipca 2025, 17:40</div><p>Moniko, chętnie poznam Cię osobiście. – <strong>Andrzej</strong></p></div>
+        <div class="comment"><div class="meta">📅 3 lipca 2025, 13:09</div><p>Masz piękne podejście do życia. – <strong>Dominik</strong></p></div>
+        <div class="comment"><div class="meta">📅 22 czerwca 2025, 09:57</div><p>Widać, że jesteś autentyczna i szczera. – <strong>Ola</strong></p></div>
+        <div class="comment"><div class="meta">📅 5 czerwca 2025, 19:21</div><p>Moniko, życzę Ci dużo zdrowia i wsparcia. – <strong>Kamil</strong></p></div>
+        <div class="comment"><div class="meta">📅 29 maja 2025, 14:16</div><p>Hej Monika, bardzo chciałbym się z Tobą spotkać. – <strong>Mateusz</strong></p></div>
+        <div class="comment"><div class="meta">📅 14 maja 2025, 18:44</div><p>Podziwiam Twoją odwagę. – <strong>Sylwia</strong></p></div>
+        <div class="comment"><div class="meta">📅 7 maja 2025, 20:08</div><p>Trzymaj się, jesteś wyjątkowa! – <strong>Robert</strong></p></div>
+        <div class="comment"><div class="meta">📅 20 kwietnia 2025, 12:33</div><p>Miło wiedzieć, że jesteś z okolic. – <strong>Agnieszka</strong></p></div>
+        <div class="comment"><div class="meta">📅 8 kwietnia 2025, 09:42</div><p>Twoja szczerość mnie zachwyca. – <strong>Marcin</strong></p></div>
+        <div class="comment"><div class="meta">📅 25 marca 2025, 22:11</div><p>Droga Moniko, jesteś inspiracją! – <strong>Joanna</strong></p></div>
       </section>
     </main>
 
     <footer>
       © <span id="rok"></span> Profil Moniki • Dbaj o zgodę i prywatność.<br>
       👁️ Liczba odwiedzin: <span id="counter"></span>
+      <div class="impressum">
+        <strong>Impressum:</strong><br>
+        Monika Dykban<br>
+        Borek 8<br>
+        PL-66-446 Deczno/Borek<br>
+        Tel.: +48 783 020 727<br>
+        E-Mail: <a href="mailto:monika.dy@interia.com" class="link">monika.dy@interia.com</a>
+      </div>
     </footer>
   </div>
 
   <script>
-    // Rok w stopce
     document.getElementById('rok').textContent = new Date().getFullYear();
-
-    // Formularz (demo)
-    function submitMsg(){
-      if(!document.getElementById('zgoda').checked){
-        alert('Zaznacz zgodę, aby wysłać wiadomość.');
-        return;
-      }
-      alert('Dziękuję! Twoja wiadomość została zapisana lokalnie (demo).');
-    }
-
-    // Visitor Counter: start at 1000 and persist (per browser)
     (function(){
       const KEY = 'visitCount';
       let v = parseInt(localStorage.getItem(KEY), 10);
-
-      if (Number.isNaN(v)) v = 999; // next increment -> 1000
+      if (Number.isNaN(v)) v = 999;
       v += 1;
-
       localStorage.setItem(KEY, String(v));
       document.getElementById('counter').textContent = v.toLocaleString('pl-PL');
     })();
