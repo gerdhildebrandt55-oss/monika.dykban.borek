@@ -26,10 +26,21 @@
     .card{background:linear-gradient(180deg, rgba(17,24,39,.7), rgba(17,24,39,.95));
       border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:20px}
     .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:18px}
-    .faces{display:flex; gap:10px; flex-wrap:wrap}
-    .face{flex:1 1 240px; border-radius:14px; aspect-ratio:4/3; background:rgba(255,255,255,.05);
-      border:1px dashed rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; overflow:hidden}
-    .face img{width:100%; height:100%; object-fit:cover; border-radius:14px}
+    .faces{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+    .face{
+      flex:1 1 240px;
+      max-width:300px;
+      border-radius:14px;
+      background:#0b1220;
+      border:1px solid rgba(255,255,255,.15);
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden;
+    }
+    .face img{
+      width:100%; height:100%;
+      object-fit:contain;  /* zeigt vollständiges Bild */
+      border-radius:14px;
+    }
     .badges{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0}
     .badge{padding:6px 10px; border-radius:999px; font-size:.85rem; background:rgba(34,211,238,.12);
       border:1px solid rgba(34,211,238,.35)}
@@ -57,7 +68,13 @@
     .comment{background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
       border-radius:14px; padding:12px; margin-bottom:10px}
     .comment .meta{font-size:.8rem; color:#9ca3af; margin-bottom:6px}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.faces{flex-direction:column}}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .faces{flex-direction:column; align-items:center}
+      .face{width:100%; max-width:100%}
+    }
   </style>
 </head>
 <body>
@@ -76,7 +93,7 @@
           <h2>Cześć, jestem <span style="color:#fff;font-weight:700">Monika</span> 👋</h2>
           <p>
             Witaj na mojej stronie profilowej. Szukam szczerej relacji opartej na zaufaniu, szacunku i czułości.
-            Jestem otwarta na poznanie <strong>kobiet i mężczyzn</strong>.
+            Jestem otwarta na poznanie <strong>kobiet i mężczyzn</strong> – ważne są dla mnie wartości, poczucie humoru i chemia.
           </p>
           <div class="badges" aria-label="Cechy">
             <span class="badge">życzliwa</span>
@@ -86,10 +103,10 @@
           <div class="section" aria-label="O mnie">
             <h2>O mnie</h2>
             <p>
-              Mam na imię Monika. Jestem osobą ciepłą i komunikatywną. Żyję aktywnie – lubię spacery, kawę i rozmowy.
-              Choruję na stwardnienie rozsiane (SM), ale dbam o siebie i zachowuję pozytywne nastawienie.
-              Mieszkam u rodziców, co daje mi stabilność i wsparcie.
-              Bliskość i czułość są dla mnie ważne, relacje traktuję poważnie.
+              Mam na imię Monika. Jestem osobą ciepłą i komunikatywną. Żyję aktywnie na miarę możliwości – lubię spacery, dobrą kawę i spokojne rozmowy.
+              Choruję na stwardnienie rozsiane (SM), ale dbam o siebie i staram się zachować pozytywne nastawienie.
+              Mieszkam obecnie u moich rodziców, co daje mi stabilność i wsparcie.
+              Bliskość jest dla mnie ważna – jestem czuła i zmysłowa, a relacje traktuję poważnie i z szacunkiem.
             </p>
           </div>
         </div>
@@ -119,7 +136,7 @@
           <div class="tile">
             <strong>Kreatywnie</strong>
             <ul>
-              <li>Gotowanie i przepisy</li>
+              <li>Gotowanie i nowe przepisy</li>
               <li>Zdjęcia & małe DIY</li>
             </ul>
           </div>
@@ -137,21 +154,24 @@
       <section class="section" aria-label="Czego szukam">
         <h2>Czego szukam</h2>
         <p>
-          Szukam osoby empatycznej i ciepłej. Może to być kobieta lub mężczyzna – ważna jest dojrzałość emocjonalna,
-          wsparcie i gotowość do budowania więzi.
+          Szukam osoby empatycznej, odpowiedzialnej i ciepłej. Może to być kobieta lub mężczyzna – najważniejsza jest
+          dojrzałość emocjonalna, wzajemne wsparcie i gotowość do budowania więzi. Jestem otwarta na różne scenariusze:
+          przyjaźń, relacja na odległość, a jeśli poczujemy, że to „to” – coś poważniejszego.
         </p>
         <ul>
-          <li>Doceniam szczerość i humor.</li>
-          <li>Bezpieczeństwo i komfort w relacji.</li>
-          <li>Szanuję granice i komunikuję potrzeby.</li>
-          <li><strong>Preferuję kontakt z osobami z Gorzowa i okolic.</strong></li>
+          <li>Doceniam szczerość, poczucie humoru i kulturę osobistą.</li>
+          <li>Chcę, aby obie strony czuły się bezpiecznie i komfortowo.</li>
+          <li>Szanuję granice i komunikuję potrzeby wprost.</li>
+          <li><strong>Preferuję kontakt z osobami z Gorzowa Wielkopolskiego i okolic.</strong></li>
         </ul>
       </section>
 
       <!-- KONTAKT -->
       <section id="kontakt" class="section" aria-label="Kontakt">
         <h2>Kontakt</h2>
-        <p>Możesz skontaktować się ze mną przez formularz lub Facebook.</p>
+        <p>
+          Możesz skontaktować się ze mną przez formularz lub przez profil społecznościowy.
+        </p>
         <div class="actions" style="margin-bottom:10px">
           <a class="btn btn-ghost link" href="https://www.facebook.com/monika.dykban" target="_blank" rel="noopener">Mój profil na Facebooku</a>
         </div>
@@ -174,12 +194,12 @@
           </div>
           <div class="row-full">
             <label for="wiadomosc">Wiadomość</label>
-            <textarea id="wiadomosc" name="wiadomosc" required></textarea>
+            <textarea id="wiadomosc" name="wiadomosc" placeholder="Napisz kilka słów o sobie... np. czy też jesteś z Gorzowa lub okolic." required></textarea>
           </div>
           <div class="row-full">
             <label style="display:flex; gap:8px; align-items:center">
               <input type="checkbox" id="zgoda" required>
-              <span>Zgoda na kontakt i przetwarzanie danych.</span>
+              <span>Wyrażam zgodę na kontakt i przetwarzanie moich danych wyłącznie w celu odpowiedzi na tę wiadomość.</span>
             </label>
           </div>
           <div class="row-full actions">
@@ -192,6 +212,7 @@
       <!-- KOMENTARZE -->
       <section class="section comments" aria-label="Komentarze">
         <h2>Komentarze</h2>
+        <!-- 20 Kommentare -->
         <div class="comment"><div class="meta">📅 Dzisiaj, 14:32</div><p>Moniko, cieszę się, że dzielisz się swoją historią. – <strong>Anna</strong></p></div>
         <div class="comment"><div class="meta">📅 Dzisiaj, 09:15</div><p>Bardzo inspirujące podejście. – <strong>Piotr</strong></p></div>
         <div class="comment"><div class="meta">📅 Wczoraj, 21:48</div><p>Podziwiam Twoją szczerość. – <strong>Kasia</strong></p></div>
@@ -223,4 +244,34 @@
         Monika Dykban<br>
         Borek 8<br>
         PL-66-446 Deczno/Borek<br>
-        Tel.: +48 783 
+        Tel.: +48 783 020 727<br>
+        E-Mail: monika.dy@interia.com
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Rok w stopce
+    document.getElementById('rok').textContent = new Date().getFullYear();
+
+    // Formularz (demo)
+    function submitMsg(){
+      if(!document.getElementById('zgoda').checked){
+        alert('Zaznacz zgodę, aby wysłać wiadomość.');
+        return;
+      }
+      alert('Dziękuję! Twoja wiadomość została zapisana lokalnie (demo).');
+    }
+
+    // Visitor Counter
+    (function(){
+      const KEY = 'visitCount';
+      let v = parseInt(localStorage.getItem(KEY), 10);
+      if (Number.isNaN(v)) v = 999;
+      v += 1;
+      localStorage.setItem(KEY, String(v));
+      document.getElementById('counter').textContent = v.toLocaleString('pl-PL');
+    })();
+  </script>
+</body>
+</html>
