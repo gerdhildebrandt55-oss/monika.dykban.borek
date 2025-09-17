@@ -35,11 +35,25 @@
       border:1px solid rgba(255,255,255,.15);
       display:flex; align-items:center; justify-content:center;
       overflow:hidden;
+      cursor:pointer;
     }
     .face img{
       width:100%; height:100%;
-      object-fit:contain;  /* zeigt vollständiges Bild */
+      object-fit:contain;
       border-radius:14px;
+      transition:transform .3s;
+    }
+    .face:hover img{transform:scale(1.05)}
+    .lightbox{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.85);
+      display:none; align-items:center; justify-content:center;
+      z-index:9999;
+    }
+    .lightbox img{
+      max-width:95%; max-height:95%;
+      border-radius:12px;
+      box-shadow:0 0 20px rgba(0,0,0,.6);
     }
     .badges{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0}
     .badge{padding:6px 10px; border-radius:999px; font-size:.85rem; background:rgba(34,211,238,.12);
@@ -212,7 +226,6 @@
       <!-- KOMENTARZE -->
       <section class="section comments" aria-label="Komentarze">
         <h2>Komentarze</h2>
-        <!-- 20 Kommentare -->
         <div class="comment"><div class="meta">📅 Dzisiaj, 14:32</div><p>Moniko, cieszę się, że dzielisz się swoją historią. – <strong>Anna</strong></p></div>
         <div class="comment"><div class="meta">📅 Dzisiaj, 09:15</div><p>Bardzo inspirujące podejście. – <strong>Piotr</strong></p></div>
         <div class="comment"><div class="meta">📅 Wczoraj, 21:48</div><p>Podziwiam Twoją szczerość. – <strong>Kasia</strong></p></div>
@@ -229,49 +242,4 @@
         <div class="comment"><div class="meta">📅 5 czerwca 2025, 19:21</div><p>Życzę dużo zdrowia. – <strong>Kamil</strong></p></div>
         <div class="comment"><div class="meta">📅 29 maja 2025, 14:16</div><p>Chciałbym się spotkać. – <strong>Mateusz</strong></p></div>
         <div class="comment"><div class="meta">📅 14 maja 2025, 18:44</div><p>Podziwiam Twoją odwagę. – <strong>Sylwia</strong></p></div>
-        <div class="comment"><div class="meta">📅 7 maja 2025, 20:08</div><p>Jesteś wyjątkowa. – <strong>Robert</strong></p></div>
-        <div class="comment"><div class="meta">📅 20 kwietnia 2025, 12:33</div><p>Miło, że jesteś z okolic. – <strong>Agnieszka</strong></p></div>
-        <div class="comment"><div class="meta">📅 8 kwietnia 2025, 09:42</div><p>Twoja szczerość mnie zachwyca. – <strong>Marcin</strong></p></div>
-        <div class="comment"><div class="meta">📅 25 marca 2025, 22:11</div><p>Jesteś inspiracją! – <strong>Joanna</strong></p></div>
-      </section>
-    </main>
-
-    <footer>
-      © <span id="rok"></span> Profil Moniki • Dbaj o zgodę i prywatność.<br>
-      👁️ Liczba odwiedzin: <span id="counter"></span>
-      <div class="impressum">
-        <strong>Impressum:</strong><br>
-        Monika Dykban<br>
-        Borek 8<br>
-        PL-66-446 Deczno/Borek<br>
-        Tel.: +48 783 020 727<br>
-        E-Mail: monika.dy@interia.com
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    // Rok w stopce
-    document.getElementById('rok').textContent = new Date().getFullYear();
-
-    // Formularz (demo)
-    function submitMsg(){
-      if(!document.getElementById('zgoda').checked){
-        alert('Zaznacz zgodę, aby wysłać wiadomość.');
-        return;
-      }
-      alert('Dziękuję! Twoja wiadomość została zapisana lokalnie (demo).');
-    }
-
-    // Visitor Counter
-    (function(){
-      const KEY = 'visitCount';
-      let v = parseInt(localStorage.getItem(KEY), 10);
-      if (Number.isNaN(v)) v = 999;
-      v += 1;
-      localStorage.setItem(KEY, String(v));
-      document.getElementById('counter').textContent = v.toLocaleString('pl-PL');
-    })();
-  </script>
-</body>
-</html>
+        <div class="comment"><
