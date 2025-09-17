@@ -83,6 +83,15 @@
             <span class="badge">z poczuciem humoru</span>
             <span class="badge">autentyczna</span>
           </div>
+          <div class="section" aria-label="O mnie">
+            <h2>O mnie</h2>
+            <p>
+              Mam na imię Monika. Jestem osobą ciepłą i komunikatywną. Żyję aktywnie – lubię spacery, kawę i rozmowy.
+              Choruję na stwardnienie rozsiane (SM), ale dbam o siebie i zachowuję pozytywne nastawienie.
+              Mieszkam u rodziców, co daje mi stabilność i wsparcie.
+              Bliskość i czułość są dla mnie ważne, relacje traktuję poważnie.
+            </p>
+          </div>
         </div>
         <div class="faces">
           <div class="face"><img src="assets/fallschirm.png" alt="Zdjęcie Moniki A"></div>
@@ -96,30 +105,113 @@
         </div>
       </section>
 
+      <!-- ZAINTERESOWANIA -->
+      <section class="section" aria-label="Zainteresowania">
+        <h2>Zainteresowania</h2>
+        <div class="grid">
+          <div class="tile">
+            <strong>Ruch & natura</strong>
+            <ul>
+              <li>Spacery, lekka joga</li>
+              <li>Wycieczki nad wodę i do lasu</li>
+            </ul>
+          </div>
+          <div class="tile">
+            <strong>Kreatywnie</strong>
+            <ul>
+              <li>Gotowanie i przepisy</li>
+              <li>Zdjęcia & małe DIY</li>
+            </ul>
+          </div>
+          <div class="tile">
+            <strong>Chwila spokoju</strong>
+            <ul>
+              <li>Książki i dobre seriale</li>
+              <li>Muzyka, spotkania z przyjaciółmi</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CZEGO SZUKAM -->
+      <section class="section" aria-label="Czego szukam">
+        <h2>Czego szukam</h2>
+        <p>
+          Szukam osoby empatycznej i ciepłej. Może to być kobieta lub mężczyzna – ważna jest dojrzałość emocjonalna,
+          wsparcie i gotowość do budowania więzi.
+        </p>
+        <ul>
+          <li>Doceniam szczerość i humor.</li>
+          <li>Bezpieczeństwo i komfort w relacji.</li>
+          <li>Szanuję granice i komunikuję potrzeby.</li>
+          <li><strong>Preferuję kontakt z osobami z Gorzowa i okolic.</strong></li>
+        </ul>
+      </section>
+
+      <!-- KONTAKT -->
+      <section id="kontakt" class="section" aria-label="Kontakt">
+        <h2>Kontakt</h2>
+        <p>Możesz skontaktować się ze mną przez formularz lub Facebook.</p>
+        <div class="actions" style="margin-bottom:10px">
+          <a class="btn btn-ghost link" href="https://www.facebook.com/monika.dykban" target="_blank" rel="noopener">Mój profil na Facebooku</a>
+        </div>
+        <form class="contact" onsubmit="event.preventDefault(); submitMsg()">
+          <div>
+            <label for="imie">Twoje imię</label>
+            <input id="imie" name="imie" placeholder="np. Anna / Piotr" required>
+          </div>
+          <div>
+            <label for="email">Twój e-mail</label>
+            <input id="email" name="email" type="email" placeholder="twoj@mail.example" required>
+          </div>
+          <div>
+            <label for="preferencje">Kogo chcesz poznać?</label>
+            <select id="preferencje" name="preferencje">
+              <option value="kobiety">Kobiety</option>
+              <option value="mezczyzn">Mężczyzn</option>
+              <option value="wszystkich" selected>Wszystkich</option>
+            </select>
+          </div>
+          <div class="row-full">
+            <label for="wiadomosc">Wiadomość</label>
+            <textarea id="wiadomosc" name="wiadomosc" required></textarea>
+          </div>
+          <div class="row-full">
+            <label style="display:flex; gap:8px; align-items:center">
+              <input type="checkbox" id="zgoda" required>
+              <span>Zgoda na kontakt i przetwarzanie danych.</span>
+            </label>
+          </div>
+          <div class="row-full actions">
+            <button class="btn btn-primary" type="submit">Wyślij</button>
+            <button class="btn btn-ghost" type="reset">Wyczyść</button>
+          </div>
+        </form>
+      </section>
+
       <!-- KOMENTARZE -->
       <section class="section comments" aria-label="Komentarze">
         <h2>Komentarze</h2>
-
-        <div class="comment"><div class="meta">📅 Dzisiaj, 14:32</div><p>Moniko, cieszę się, że dzielisz się swoją historią. Trzymam za Ciebie kciuki! – <strong>Anna</strong></p></div>
-        <div class="comment"><div class="meta">📅 Dzisiaj, 09:15</div><p>Bardzo inspirujące podejście, chciałbym kiedyś porozmawiać przy kawie. – <strong>Piotr</strong></p></div>
-        <div class="comment"><div class="meta">📅 Wczoraj, 21:48</div><p>Monika, podziwiam Twoją szczerość. Pozdrawiam serdecznie! – <strong>Kasia</strong></p></div>
-        <div class="comment"><div class="meta">📅 Wczoraj, 16:22</div><p>Hej, jestem z Gorzowa – może kiedyś spacer? – <strong>Marek</strong></p></div>
-        <div class="comment"><div class="meta">📅 14 września 2025, 19:05</div><p>Twoja historia mnie poruszyła. Życzę Ci dużo siły. – <strong>Łukasz</strong></p></div>
-        <div class="comment"><div class="meta">📅 11 września 2025, 11:44</div><p>Droga Moniko, jeśli będziesz potrzebować pomocy – daj znać. – <strong>Jan</strong></p></div>
-        <div class="comment"><div class="meta">📅 5 września 2025, 08:12</div><p>Poznałem Cię dawno temu, miło widzieć Twój uśmiech. – <strong>Paweł</strong></p></div>
-        <div class="comment"><div class="meta">📅 28 sierpnia 2025, 20:36</div><p>Moniko, trzymam kciuki. Może kawa w centrum? – <strong>Karolina</strong></p></div>
+        <div class="comment"><div class="meta">📅 Dzisiaj, 14:32</div><p>Moniko, cieszę się, że dzielisz się swoją historią. – <strong>Anna</strong></p></div>
+        <div class="comment"><div class="meta">📅 Dzisiaj, 09:15</div><p>Bardzo inspirujące podejście. – <strong>Piotr</strong></p></div>
+        <div class="comment"><div class="meta">📅 Wczoraj, 21:48</div><p>Podziwiam Twoją szczerość. – <strong>Kasia</strong></p></div>
+        <div class="comment"><div class="meta">📅 Wczoraj, 16:22</div><p>Jestem z Gorzowa – może spacer? – <strong>Marek</strong></p></div>
+        <div class="comment"><div class="meta">📅 14 września 2025, 19:05</div><p>Twoja historia mnie poruszyła. – <strong>Łukasz</strong></p></div>
+        <div class="comment"><div class="meta">📅 11 września 2025, 11:44</div><p>Jeśli będziesz potrzebować pomocy – daj znać. – <strong>Jan</strong></p></div>
+        <div class="comment"><div class="meta">📅 5 września 2025, 08:12</div><p>Pamiętam Cię sprzed lat. – <strong>Paweł</strong></p></div>
+        <div class="comment"><div class="meta">📅 28 sierpnia 2025, 20:36</div><p>Może kawa w centrum? – <strong>Karolina</strong></p></div>
         <div class="comment"><div class="meta">📅 12 sierpnia 2025, 15:28</div><p>Cieszę się, że masz pozytywne nastawienie. – <strong>Adam</strong></p></div>
-        <div class="comment"><div class="meta">📅 30 lipca 2025, 10:54</div><p>Hej, fajnie że jesteś tutaj otwarta na ludzi. – <strong>Ewa</strong></p></div>
-        <div class="comment"><div class="meta">📅 18 lipca 2025, 17:40</div><p>Moniko, chętnie poznam Cię osobiście. – <strong>Andrzej</strong></p></div>
+        <div class="comment"><div class="meta">📅 30 lipca 2025, 10:54</div><p>Fajnie że jesteś otwarta na ludzi. – <strong>Ewa</strong></p></div>
+        <div class="comment"><div class="meta">📅 18 lipca 2025, 17:40</div><p>Chętnie poznam Cię osobiście. – <strong>Andrzej</strong></p></div>
         <div class="comment"><div class="meta">📅 3 lipca 2025, 13:09</div><p>Masz piękne podejście do życia. – <strong>Dominik</strong></p></div>
-        <div class="comment"><div class="meta">📅 22 czerwca 2025, 09:57</div><p>Widać, że jesteś autentyczna i szczera. – <strong>Ola</strong></p></div>
-        <div class="comment"><div class="meta">📅 5 czerwca 2025, 19:21</div><p>Moniko, życzę Ci dużo zdrowia i wsparcia. – <strong>Kamil</strong></p></div>
-        <div class="comment"><div class="meta">📅 29 maja 2025, 14:16</div><p>Hej Monika, bardzo chciałbym się z Tobą spotkać. – <strong>Mateusz</strong></p></div>
+        <div class="comment"><div class="meta">📅 22 czerwca 2025, 09:57</div><p>Widać autentyczność. – <strong>Ola</strong></p></div>
+        <div class="comment"><div class="meta">📅 5 czerwca 2025, 19:21</div><p>Życzę dużo zdrowia. – <strong>Kamil</strong></p></div>
+        <div class="comment"><div class="meta">📅 29 maja 2025, 14:16</div><p>Chciałbym się spotkać. – <strong>Mateusz</strong></p></div>
         <div class="comment"><div class="meta">📅 14 maja 2025, 18:44</div><p>Podziwiam Twoją odwagę. – <strong>Sylwia</strong></p></div>
-        <div class="comment"><div class="meta">📅 7 maja 2025, 20:08</div><p>Trzymaj się, jesteś wyjątkowa! – <strong>Robert</strong></p></div>
-        <div class="comment"><div class="meta">📅 20 kwietnia 2025, 12:33</div><p>Miło wiedzieć, że jesteś z okolic. – <strong>Agnieszka</strong></p></div>
+        <div class="comment"><div class="meta">📅 7 maja 2025, 20:08</div><p>Jesteś wyjątkowa. – <strong>Robert</strong></p></div>
+        <div class="comment"><div class="meta">📅 20 kwietnia 2025, 12:33</div><p>Miło, że jesteś z okolic. – <strong>Agnieszka</strong></p></div>
         <div class="comment"><div class="meta">📅 8 kwietnia 2025, 09:42</div><p>Twoja szczerość mnie zachwyca. – <strong>Marcin</strong></p></div>
-        <div class="comment"><div class="meta">📅 25 marca 2025, 22:11</div><p>Droga Moniko, jesteś inspiracją! – <strong>Joanna</strong></p></div>
+        <div class="comment"><div class="meta">📅 25 marca 2025, 22:11</div><p>Jesteś inspiracją! – <strong>Joanna</strong></p></div>
       </section>
     </main>
 
@@ -131,22 +223,4 @@
         Monika Dykban<br>
         Borek 8<br>
         PL-66-446 Deczno/Borek<br>
-        Tel.: +48 783 020 727<br>
-        E-Mail: <a href="mailto:monika.dy@interia.com" class="link">monika.dy@interia.com</a>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById('rok').textContent = new Date().getFullYear();
-    (function(){
-      const KEY = 'visitCount';
-      let v = parseInt(localStorage.getItem(KEY), 10);
-      if (Number.isNaN(v)) v = 999;
-      v += 1;
-      localStorage.setItem(KEY, String(v));
-      document.getElementById('counter').textContent = v.toLocaleString('pl-PL');
-    })();
-  </script>
-</body>
-</html>
+        Tel.: +48 783 
